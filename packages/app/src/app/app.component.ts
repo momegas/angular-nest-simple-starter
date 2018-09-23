@@ -9,8 +9,9 @@ import { Observable } from "rxjs";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  title: string = "Angular Nest Simple Starter";
+
+  // Selectors
   @Select(LoginState.user)
   user: Observable<firebase.User>;
-
-  title = "Angular Nest Simple Starter";
 }

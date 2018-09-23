@@ -1,0 +1,18 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Fonts
+/////////
+$font-size: 14px;
+$primary-font: 'Raleway', sans-serif;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-size: $font-size;
+}
+
+body *:not(mat-icon) {
+  font-family: $primary-font !important;
+  -webkit-font-smoothing: antialiased;
+}

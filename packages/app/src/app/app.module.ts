@@ -7,10 +7,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { AdminModule } from "./admin/admin.module";
 import { NotFoundComponent } from "./shared/components/not-found/not-found.component";
 import { LoginModule } from "./login/login.module";
-import { LobbyModule } from "./lobby/lobby.module";
+import { FrontModule } from "./front/front.module";
 import { AngularFireModule } from "angularfire2";
 import { environment } from "../environments/environment";
 import { AngularFireAuthModule } from "angularfire2/auth";
@@ -22,13 +21,9 @@ import { LoginState } from "./login/store/login.state";
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
     LoginModule,
-    LobbyModule,
-    AdminModule,
-
+    FrontModule,
     AppRoutingModule,
-
     NgxsModule.forRoot([LoginState]),
     NgxsLoggerPluginModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
