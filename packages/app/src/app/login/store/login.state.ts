@@ -1,8 +1,15 @@
-import { State, Selector, Action, NgxsOnInit, Store, StateContext } from "@ngxs/store";
+import {
+  State,
+  Selector,
+  Action,
+  NgxsOnInit,
+  Store,
+  StateContext
+} from "@ngxs/store";
 import { GithubService } from "../services/github.service";
 import * as actions from "./login.actions";
 import { AngularFireAuth } from "angularfire2/auth";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 export interface LoginStateModel {
   user: firebase.User;
@@ -17,18 +24,18 @@ export class LoginState implements NgxsOnInit {
     private githubService: GithubService,
     private store: Store,
     private afAuth: AngularFireAuth,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private router: Router
   ) {}
 
   ngxsOnInit() {
-    this.afAuth.user.subscribe((user: firebase.User) => {
-      this.store.dispatch(new actions.SetUser(user));
+    this.afAuth.user.subscribe(async (user: firebase.User) => {
       if (user) {
-        this.router.navigateByUrl("lobby");
-        return;
+        this.router.navigateByUrl("");
       }
-      this.router.navigateByUrl("");
+      else {
+        this.router.navigateByUrl("/login");
+      }
+      this.store.dispatch(new actions.SetUser(user));
     });
   }
 
