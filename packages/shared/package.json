@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
-  "dependencies": {
-    "firebase": "^5.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "build": "tsc index.ts -d",
